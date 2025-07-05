@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Claim Your Free Subscription</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #e9f6ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .popup {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      max-width: 400px;
+    }
+
+    .popup h2 {
+      color: #ff5722;
+    }
+
+    .popup img {
+      width: 100px;
+      margin: 20px 0;
+    }
+
+    .popup button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #1ab188;
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .popup button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+
+    .share-info {
+      color: #ff0000;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup">
+    <h2>🎉 Congratulations!</h2>
+    <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt="Prize" />
+    <p>You’ve won <strong>3 Months FREE Jio + Hotstar Subscription 🎁</strong> 🎁</p>
+    <p class="share-info">To claim your reward, share this with 15 friends on WhatsApp!</p>
+    <button onclick="shareOnWhatsApp()">Share on WhatsApp</button>
+    <button id="claimBtn" onclick="claimReward()" disabled>Claim Reward</button>
+  </div>
+
+  <script>
+    let shares = 0;
+
+    function shareOnWhatsApp() {
+      const message = "🎁 Netflix, Prime, JioHotstar subscriptions at low price!\n✅ We are trusted. Visit now:\n👉 https://mtbott.github.io/subscriptions/";
+      const url = "https://api.whatsapp.com/send?text=" + encodeURIComponent(message);
+      window.open(url);
+
+      shares++;
+      if (shares >= 15) {
+        document.getElementById("claimBtn").disabled = false;
+        document.querySelector('.share-info').innerText = "✅ You can now claim your free Jio+Hotstar reward!";
+      } else {
+        document.querySelector('.share-info').innerText = `📤 Shared ${shares}/15 times...`;
+      }
+    }
+
+    function claimReward() {
+      alert("Good job, You won free OTT Subscription.\n\nNow, Contact us on WhatsApp through our site!\nVisit: https://mtbott.github.io/subscriptions/");
+    }
+  </script>
+
+</body>
+</html>
