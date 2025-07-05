@@ -60,7 +60,7 @@
     <h2>🎉 Congratulations!</h2>
     <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt="Prize" />
     <p>🎁 You’ve won <strong>3 Months FREE JioHotstar Subscription</strong> 🎁</p>
-    <p class="share-info">To claim your reward, share this with 15 friends on WhatsApp!</p>
+    <p class="share-info">To claim your reward, share this with 20 friends on WhatsApp!</p>
     <button onclick="shareOnWhatsApp()">Share on WhatsApp</button>
     <button id="claimBtn" onclick="claimReward()" disabled>Claim Reward</button>
   </div>
@@ -74,11 +74,11 @@
       window.open(url);
 
       shares++;
-      if (shares >= 15) {
+      if (shares >= 20) {
         document.getElementById("claimBtn").disabled = false;
         document.querySelector('.share-info').innerText = "✅ You can now claim your free JioHotstar reward!";
       } else {
-        document.querySelector('.share-info').innerText = `📤 Shared ${shares}/15 times...`;
+        document.querySelector('.share-info').innerText = `📤 Shared ${shares}/20 times...`;
       }
     }
 
