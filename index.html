@@ -59,7 +59,7 @@
   <div class="popup">
     <h2>🎉 Congratulations!</h2>
     <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" alt="Prize" />
-    <p>You’ve won <strong>3 Months FREE Jio + Hotstar Subscription 🎁</strong> 🎁</p>
+    <p>🎁 You’ve won <strong>3 Months FREE JioHotstar Subscription</strong> 🎁</p>
     <p class="share-info">To claim your reward, share this with 15 friends on WhatsApp!</p>
     <button onclick="shareOnWhatsApp()">Share on WhatsApp</button>
     <button id="claimBtn" onclick="claimReward()" disabled>Claim Reward</button>
@@ -69,21 +69,21 @@
     let shares = 0;
 
     function shareOnWhatsApp() {
-      const message = "🎁 Netflix, Prime, JioHotstar subscriptions at low price!\n✅ We are trusted. Visit now:\n👉 https://mtbott.github.io/subscriptions/";
+      const message = "🎁 Netflix, Prime, JioHotstar & more subscriptions at very very low price with pin locked secure profiles!\n✅ 💯% trusted. Visit now:\n👉 https://mtbott.github.io/subscriptions/\n\nTo claim your FREE Subscription just like me, visit https://mtbott.github.io/refer/";
       const url = "https://api.whatsapp.com/send?text=" + encodeURIComponent(message);
       window.open(url);
 
       shares++;
       if (shares >= 15) {
         document.getElementById("claimBtn").disabled = false;
-        document.querySelector('.share-info').innerText = "✅ You can now claim your free Jio+Hotstar reward!";
+        document.querySelector('.share-info').innerText = "✅ You can now claim your free JioHotstar reward!";
       } else {
         document.querySelector('.share-info').innerText = `📤 Shared ${shares}/15 times...`;
       }
     }
 
     function claimReward() {
-      alert("Good job, You won free OTT Subscription.\n\nNow, Contact us on WhatsApp through our site!\nVisit: https://mtbott.github.io/subscriptions/");
+      alert("🎁 Well done, You won free OTT Subscription.\n\nNow, Get your free subscription through WhatsApp.\n\nVisit & click the WhatsApp button and send us your recent chats screenshot👉 https://mtbott.github.io/subscriptions/");
     }
   </script>
 
